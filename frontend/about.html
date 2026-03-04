@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Library Management System - Project Info</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <h1>Library Management Dashboard</h1>
+      <button id="loadAllBtn" class="btn primary">Load Data</button>
+    </header>
+
+    <main class="container">
+      <nav class="tabs">
+        <a class="tab-btn" href="books.html">Books</a>
+        <a class="tab-btn" href="members.html">Members</a>
+        <a class="tab-btn" href="issues.html">Issued Books</a>
+        <a class="tab-btn" href="categories.html">Categories</a>
+        <a class="tab-btn" href="staff.html">Staff</a>
+        <a class="tab-btn" href="reservations.html">Reservations</a>
+        <a class="tab-btn" href="stats.html">Statistics</a>
+        <a class="tab-btn active" href="about.html">About</a>
+      </nav>
+
+      <section id="alertBox" class="alert hidden"></section>
+      <section id="loadingBox" class="loading hidden">Loading...</section>
+
+      <section class="tab-content active">
+        <div class="card about-card">
+          <h2>📚 Project Details</h2>
+          <p><strong>Project Name:</strong> Library Management System</p>
+          <p><strong>Subject:</strong> Database Management System (DBMS)</p>
+          
+          <h3 class="section-heading">👥 Group Members</h3>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>👤 Name</th>
+                  <th>🎓 PRN</th>
+                  <th>📋 Roll Number</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Kunal Gavit </td>
+                  <td>202401120021</td>
+                  <td>15</td>
+                </tr>
+                <tr>
+                  <td>Toshit Ghrat</td>
+                  <td>202401120008</td>
+                  <td>06</td>
+                </tr>
+                <tr>
+                  <td>Prachit Logade</td>
+                  <td>202401120025</td>
+                  <td>18</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h3 class="section-heading">✨ Features</h3>
+          <ul class="feature-list">
+            <li>📖 Manage Books with categories, ISBN, and publisher info</li>
+            <li>👤 Manage Members with membership types and status</li>
+            <li>📤 Track Book Issues with staff assignment and due dates</li>
+            <li>🏷️ Manage Categories for book organization</li>
+            <li>👨‍💼 Track Staff members with roles and hire dates</li>
+            <li>🔖 Handle Book Reservations with expiry tracking</li>
+            <li>📊 View comprehensive statistics and reports</li>
+          </ul>
+
+          <h3 class="section-heading">🛠️ Technology Stack</h3>
+          <ul class="feature-list">
+            <li><strong>🖥️ Frontend:</strong> HTML, CSS, JavaScript</li>
+            <li><strong>⚙️ Backend:</strong> Node.js with Express</li>
+            <li><strong>🗄️ Database:</strong> MySQL with relational schema</li>
+            <li><strong>🔗 API:</strong> RESTful architecture</li>
+          </ul>
+        </div>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Library Management System - Staff</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <h1>Library Management Dashboard</h1>
+      <button id="loadAllBtn" class="btn primary">Load Data</button>
+    </header>
+
+    <main class="container">
+      <nav class="tabs">
+        <a class="tab-btn" href="books.html">📚 Books</a>
+        <a class="tab-btn" href="members.html">👥 Members</a>
+        <a class="tab-btn" href="issues.html">📤 Issues</a>
+        <a class="tab-btn" href="categories.html">🏷️ Categories</a>
+        <a class="tab-btn active" href="staff.html">👨‍💼 Staff</a>
+        <a class="tab-btn" href="reservations.html">🔖 Reservations</a>
+        <a class="tab-btn" href="stats.html">📊 Stats</a>
+        <a class="tab-btn" href="about.html">ℹ️ About</a>
+      </nav>
+
+      <section id="alertBox" class="alert hidden"></section>
+      <section id="loadingBox" class="loading hidden">Loading...</section>
+
+      <section class="tab-content active">
+        <div class="card">
+          <h2>➕ Add Staff</h2>
+          <form id="staffForm" class="form-grid">
+            <input type="text" id="staffName" placeholder="Name" required />
+            <input type="email" id="staffEmail" placeholder="Email" required />
+            <input type="text" id="staffPhone" placeholder="Phone" required />
+            <input type="text" id="staffRole" placeholder="Role" required />
+            <label for="staffHireDate" class="field-label">Hire Date</label>
+            <input type="date" id="staffHireDate" required />
+            <button type="submit" class="btn success">➕ Add Staff</button>
+          </form>
+        </div>
+
+        <div class="card">
+          <h2>👨‍💼 Staff List</h2>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Staff ID</th>
+                  <th>Name</th>
+                  <th>Email</th>
+                  <th>Phone</th>
+                  <th>Role</th>
+                  <th>Hire Date</th>
+                </tr>
+              </thead>
+              <tbody id="staffTableBody"></tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>

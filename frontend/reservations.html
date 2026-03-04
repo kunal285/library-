@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Library Management System - Reservations</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <h1>Library Management Dashboard</h1>
+      <button id="loadAllBtn" class="btn primary">Load Data</button>
+    </header>
+
+    <main class="container">
+      <nav class="tabs">
+        <a class="tab-btn" href="books.html">📚 Books</a>
+        <a class="tab-btn" href="members.html">👥 Members</a>
+        <a class="tab-btn" href="issues.html">📤 Issues</a>
+        <a class="tab-btn" href="categories.html">🏷️ Categories</a>
+        <a class="tab-btn" href="staff.html">👨‍💼 Staff</a>
+        <a class="tab-btn active" href="reservations.html">🔖 Reservations</a>
+        <a class="tab-btn" href="stats.html">📊 Stats</a>
+        <a class="tab-btn" href="about.html">ℹ️ About</a>
+      </nav>
+
+      <section id="alertBox" class="alert hidden"></section>
+      <section id="loadingBox" class="loading hidden">Loading...</section>
+
+      <section class="tab-content active">
+        <div class="card">
+          <h2>➕ Add Reservation</h2>
+          <form id="reservationForm" class="form-grid">
+            <input type="number" id="reservationBookId" placeholder="Book ID" required />
+            <input type="number" id="reservationMemberId" placeholder="Member ID" required />
+            <label for="reservationDate" class="field-label">Reservation Date</label>
+            <input type="date" id="reservationDate" required />
+            <label for="reservationExpiryDate" class="field-label">Expiry Date</label>
+            <input type="date" id="reservationExpiryDate" required />
+            <label for="reservationStatus" class="field-label">Reservation Status</label>
+            <select id="reservationStatus" title="Reservation Status">
+              <option value="Active">Active</option>
+              <option value="Expired">Expired</option>
+              <option value="Fulfilled">Fulfilled</option>
+            </select>
+            <button type="submit" class="btn success">➕ Add Reservation</button>
+          </form>
+        </div>
+
+        <div class="card action-row">
+          <button id="reservationDetailsBtn" class="btn secondary">📋 Show Details</button>
+        </div>
+
+        <div class="card">
+          <h2>🔖 Reservations List</h2>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Reservation ID</th>
+                  <th>Book</th>
+                  <th>Member</th>
+                  <th>Reservation Date</th>
+                  <th>Expiry Date</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody id="reservationsTableBody"></tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>

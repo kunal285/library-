@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Library Management System - Issued Books</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <h1>Library Management Dashboard</h1>
+      <button id="loadAllBtn" class="btn primary">Load Data</button>
+    </header>
+
+    <main class="container">
+      <nav class="tabs">
+        <a class="tab-btn" href="books.html">📚 Books</a>
+        <a class="tab-btn" href="members.html">👥 Members</a>
+        <a class="tab-btn active" href="issues.html">📤 Issues</a>
+        <a class="tab-btn" href="categories.html">🏷️ Categories</a>
+        <a class="tab-btn" href="staff.html">👨‍💼 Staff</a>
+        <a class="tab-btn" href="reservations.html">🔖 Reservations</a>
+        <a class="tab-btn" href="stats.html">📊 Stats</a>
+        <a class="tab-btn" href="about.html">ℹ️ About</a>
+      </nav>
+
+      <section id="alertBox" class="alert hidden"></section>
+      <section id="loadingBox" class="loading hidden">Loading...</section>
+
+      <section class="tab-content active">
+        <div class="card">
+          <h2>📤 Issue Book</h2>
+          <form id="issueForm" class="form-grid">
+            <input type="number" id="issueBookId" placeholder="Book ID" required />
+            <input type="number" id="issueMemberId" placeholder="Member ID" required />
+            <input type="number" id="issueStaffId" placeholder="Staff ID (Optional)" />
+            <label for="issueDate" class="field-label">Issue Date</label>
+            <input type="date" id="issueDate" required />
+            <label for="issueDueDate" class="field-label">Due Date (Optional)</label>
+            <input type="date" id="issueDueDate" />
+            <button type="submit" class="btn success">📤 Issue Book</button>
+          </form>
+        </div>
+
+        <div class="card action-row">
+          <button id="overdueBtn" class="btn warning">⏰ Show Overdue Books</button>
+          <button id="issueDetailsBtn" class="btn secondary">📋 Show Join Details</button>
+        </div>
+
+        <div class="card">
+          <h2>📋 Issued Books List</h2>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Issue ID</th>
+                  <th>Book</th>
+                  <th>Member</th>
+                  <th>Staff</th>
+                  <th>Issue Date</th>
+                  <th>Due Date</th>
+                  <th>Return Date</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody id="issuesTableBody"></tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="card">
+          <h2>✅ Return Book</h2>
+          <form id="returnForm" class="form-grid">
+            <input type="number" id="returnIssueId" placeholder="Issue ID" required />
+            <label for="actualReturnDate" class="field-label">Actual Return Date</label>
+            <input type="date" id="actualReturnDate" required />
+            <button type="submit" class="btn primary">✅ Mark Returned</button>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>

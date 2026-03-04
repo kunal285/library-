@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Library Management System - Members</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <h1>Library Management Dashboard</h1>
+      <button id="loadAllBtn" class="btn primary">Load Data</button>
+    </header>
+
+    <main class="container">
+      <nav class="tabs">
+        <a class="tab-btn" href="books.html">📚 Books</a>
+        <a class="tab-btn active" href="members.html">👥 Members</a>
+        <a class="tab-btn" href="issues.html">📤 Issues</a>
+        <a class="tab-btn" href="categories.html">🏷️ Categories</a>
+        <a class="tab-btn" href="staff.html">👨‍💼 Staff</a>
+        <a class="tab-btn" href="reservations.html">🔖 Reservations</a>
+        <a class="tab-btn" href="stats.html">📊 Stats</a>
+        <a class="tab-btn" href="about.html">ℹ️ About</a>
+      </nav>
+
+      <section id="alertBox" class="alert hidden"></section>
+      <section id="loadingBox" class="loading hidden">Loading...</section>
+
+      <section class="tab-content active">
+        <div class="card">
+          <h2>➕ Add Member</h2>
+          <form id="memberForm" class="form-grid">
+            <input type="text" id="memberName" placeholder="Name" required />
+            <input type="email" id="memberEmail" placeholder="Email" required />
+            <input type="text" id="memberPhone" placeholder="Phone" required />
+            <input type="text" id="memberAddress" placeholder="Address (Optional)" />
+            <select id="memberType" title="Member Type">
+              <option value="Regular">Regular</option>
+              <option value="Student">Student</option>
+              <option value="Premium">Premium</option>
+            </select>
+            <label for="memberDate" class="field-label">Membership Date</label>
+            <input type="date" id="memberDate" title="Membership Date" required />
+            <select id="memberStatus" title="Member Status">
+              <option value="Active">Active</option>
+              <option value="Inactive">Inactive</option>
+            </select>
+            <button type="submit" class="btn success">➕ Add Member</button>
+          </form>
+        </div>
+
+        <div class="card">
+          <h2>👥 Members List</h2>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>🆔 ID</th>
+                  <th>👤 Name</th>
+                  <th>📧 Email</th>
+                  <th>📱 Phone</th>
+                  <th>🎫 Type</th>
+                  <th>✅ Status</th>
+                  <th>📅 Membership Date</th>
+                </tr>
+              </thead>
+              <tbody id="membersTableBody"></tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Library Management System - Statistics</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <h1>Library Management Dashboard</h1>
+      <button id="loadAllBtn" class="btn primary">Load Data</button>
+    </header>
+
+    <main class="container">
+      <nav class="tabs">
+        <a class="tab-btn" href="books.html">📚 Books</a>
+        <a class="tab-btn" href="members.html">👥 Members</a>
+        <a class="tab-btn" href="issues.html">📤 Issues</a>
+        <a class="tab-btn" href="categories.html">🏷️ Categories</a>
+        <a class="tab-btn" href="staff.html">👨‍💼 Staff</a>
+        <a class="tab-btn" href="reservations.html">🔖 Reservations</a>
+        <a class="tab-btn active" href="stats.html">📊 Stats</a>
+        <a class="tab-btn" href="about.html">ℹ️ About</a>
+      </nav>
+
+      <section id="alertBox" class="alert hidden"></section>
+      <section id="loadingBox" class="loading hidden">Loading...</section>
+
+      <section class="tab-content active">
+        <div class="stats-grid">
+          <div class="card stat-card">
+            <h3>📚 Total Books</h3>
+            <p id="totalBooks">0</p>
+          </div>
+          <div class="card stat-card">
+            <h3>👥 Total Members</h3>
+            <p id="totalMembers">0</p>
+          </div>
+          <div class="card stat-card">
+            <h3>📤 Total Issued Books</h3>
+            <p id="totalIssues">0</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
