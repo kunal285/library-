@@ -86,6 +86,28 @@ Open `frontend/index.html` in browser.
 
 ---
 
+## 4.1) Vercel Deployment (Separate Backend + Frontend)
+
+Deploy as **two Vercel projects** from the same GitHub repo:
+
+1. **Backend project**
+   - In Vercel, create project with **Root Directory** = `backend`
+   - Add Environment Variable:
+     - `MONGO_URI` = your MongoDB Atlas URI
+   - Deploy (uses `backend/vercel.json`)
+
+2. **Frontend project**
+   - In Vercel, create project with **Root Directory** = `frontend`
+   - Open `frontend/vercel.json` and replace:
+     - `https://YOUR_BACKEND_PROJECT.vercel.app`
+     - with your real backend Vercel URL
+   - Commit and push this change
+   - Redeploy frontend
+
+After this, frontend calls `/api/...` and Vercel rewrites requests to your backend project.
+
+---
+
 ## 5) API Endpoints
 
 ### Books
