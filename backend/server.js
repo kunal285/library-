@@ -34,6 +34,12 @@ app.use(issuesRoutes);
 app.use(categoriesRoutes);
 app.use(staffRoutes);
 app.use(reservationsRoutes);
+app.use('/api', booksRoutes);
+app.use('/api', membersRoutes);
+app.use('/api', issuesRoutes);
+app.use('/api', categoriesRoutes);
+app.use('/api', staffRoutes);
+app.use('/api', reservationsRoutes);
 
 // Global fallback for undefined routes.
 app.use((req, res) => {
@@ -45,7 +51,10 @@ app.use((error, req, res, next) => {
   res.status(500).json({ message: 'Internal server error', error: error.message });
 });
 
-// Start server
-app.listen(PORT, () => {
-  console.log(`Server running on http://localhost:${PORT}`);
-});
+if (process.env.VERCEL !== '1') {
+  app.listen(PORT, () => {
+    console.log(`Server running on http://localhost:${PORT}`);
+  });
+}
+
+module.exports = app;
