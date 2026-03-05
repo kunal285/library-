@@ -2,7 +2,7 @@
   "rewrites": [
     {
       "source": "/api/:path*",
-      "destination": "https://YOUR_BACKEND_PROJECT.vercel.app/:path*"
+      "destination": "https://library-management-api-yy2y.onrender.com/"
     }
   ]
 }
